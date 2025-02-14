@@ -22,10 +22,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', fx.Fx, name="Web"),
     path('analyze',fx.analyze, name="analyze"),
+    # path('Analyze',fx.analyze, name="analyze"),
     # path("punc_remove",fx.punc_remove, name="punc_remove"),
     # path("Capatlize_First",fx.Cap_first, name="capatlize"),
     # path("Newline_remover",fx.Newline_remover, name="nl_remove"),
     # path("Space_remover",fx.Space_remover, name="space_remover"),
-    # path("Space_remover",fx.character_counter, name="char_count")
+    # path("Char_counter",fx.character_counter, name="char_count")
 ]
 
