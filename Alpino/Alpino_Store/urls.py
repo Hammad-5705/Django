@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +28,8 @@ urlpatterns = [
     path("tracker",views.tracker,name="tracker"),
     path("search",views.search,name="search"),
     path("product_view",views.product_view,name="pview"),
-    path("checkout",views.checkout,name="cout")
-]
+    path("checkout",views.checkout,name="cout"),
+    path("task01",views.task01,name="task01")
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

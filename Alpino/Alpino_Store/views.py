@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Product
 
 
 # Create your views here.
@@ -23,3 +24,9 @@ def product_view(request):
     
 def checkout(request):
     return HttpResponse("checkout")
+
+#Task to view models on Home page
+def task01(request):  
+    products = Product.objects.all()  
+    data = {"products": products}
+    return render(request, "task01.html", data)  
