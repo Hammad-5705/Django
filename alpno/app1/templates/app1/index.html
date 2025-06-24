@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    {% load static %}
+    {% load django_bootstrap5 %}
+<<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'app1/css/bootstrap.css' %}">
+
 </head>
 <body>
     <p>render test</p>
+    {% bootstrap_alert "Something went wrong" alert_type="danger" %}
+    <form action="/url/to/submit/" method="post" class="form">
+    {% csrf_token %}
+
+    {% bootstrap_form form %}
+
+    {% bootstrap_button button_type="submit" content="OK" %}
+    {% bootstrap_button button_type="reset" content="Cancel" %}
+    
+</form>
+<script src="{% static 'app1/js/bootstrap.js' %}"></script>
 </body>
 </html>
